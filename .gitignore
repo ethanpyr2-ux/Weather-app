@@ -1,0 +1,6 @@
+# API key configuration — copy config.example.js to config.js and add your key
+config.js
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
