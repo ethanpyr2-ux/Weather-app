@@ -4,7 +4,11 @@ const weatherInfo = document.querySelector('.weather-box');
 const notFound = document.querySelector('.not-found');
 
 searchButton.addEventListener('click', () => {
-const API_KEY = 'XXXXXXXXXXXXXXXXXX';
+if (typeof CONFIG === 'undefined' || !CONFIG.API_KEY || CONFIG.API_KEY === 'YOUR_API_KEY_HERE') {
+    alert('API key not configured. Please copy config.example.js to config.js and add your OpenWeatherMap API key.');
+    return;
+}
+const API_KEY = CONFIG.API_KEY;
 const city = cityInput.value.trim();
 if (city === '') {
     return;
